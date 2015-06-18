@@ -41244,24 +41244,37 @@ module.exports = warning;
 
 },{"129":129}]},{},[1])(1)
 });
+var ____Class0=React.Component;for(var ____Class0____Key in ____Class0){if(____Class0.hasOwnProperty(____Class0____Key)){Foo[____Class0____Key]=____Class0[____Class0____Key];}}var ____SuperProtoOf____Class0=____Class0===null?null:____Class0.prototype;Foo.prototype=Object.create(____SuperProtoOf____Class0);Foo.prototype.constructor=Foo;Foo.__superConstructor__=____Class0;function Foo(){"use strict";if(____Class0!==null){____Class0.apply(this,arguments);}}
+
+
+;
 
 
 
 
-
-var ____Class0=React.Component;for(var ____Class0____Key in ____Class0){if(____Class0.hasOwnProperty(____Class0____Key)){Test[____Class0____Key]=____Class0[____Class0____Key];}}var ____SuperProtoOf____Class0=____Class0===null?null:____Class0.prototype;Test.prototype=Object.create(____SuperProtoOf____Class0);Test.prototype.constructor=Test;Test.__superConstructor__=____Class0;function Test(){"use strict";if(____Class0!==null){____Class0.apply(this,arguments);}}
+var ____Class0=React.Component;for(var ____Class0____Key in ____Class0){if(____Class0.hasOwnProperty(____Class0____Key)){Test[____Class0____Key]=____Class0[____Class0____Key];}}var ____SuperProtoOf____Class0=____Class0===null?null:____Class0.prototype;Test.prototype=Object.create(____SuperProtoOf____Class0);Test.prototype.constructor=Test;Test.__superConstructor__=____Class0;
+  function Test(props) {"use strict";
+    this.state = {name: props.name}
+  }
   Object.defineProperty(Test.prototype,"render",{writable:true,configurable:true,value:function(){"use strict";
     return (
-    React.createElement("div", {onClick: this.$Test_handleClick}, 
-      React.createElement("h1", null, "bscharm.github.io")
+    React.createElement("div", {onClick: this.$Test_handleClick.bind(this)}, 
+      React.createElement("span", {className: "party"}, "bscharm.github.io")
     )
     );
   }});
 
   Object.defineProperty(Test.prototype,"$Test_handleClick",{writable:true,configurable:true,value:function() {"use strict";
-    console.log(this);
+    console.log(this.state.name)
   }});
 
+
+Test.propTypes = {
+  name: React.PropTypes.string
+};
+Test.defaultProps = {
+  name: 'Brad'
+};
 
 
 React.render(React.createElement(Test, null), document.getElementById('react'));
