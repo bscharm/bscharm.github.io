@@ -41258,22 +41258,25 @@ var ____Class0=React.Component;for(var ____Class0____Key in ____Class0){if(____C
   }
   Object.defineProperty(Test.prototype,"render",{writable:true,configurable:true,value:function(){"use strict";
     return (
-    React.createElement("div", {onClick: this.$Test_handleClick.bind(this)}, 
-      React.createElement("span", {className: "party"}, "bscharm.github.io")
+    React.createElement("div", null, 
+      React.createElement("input", {defaultValue: this.state.name, onChange: this.handleChange.bind(this), className: "party"}), 
+      React.createElement("span", {className: "party"}, this.state.name, ".github.io")
     )
     );
   }});
 
-  Object.defineProperty(Test.prototype,"$Test_handleClick",{writable:true,configurable:true,value:function() {"use strict";
-    console.log(this.state.name)
+  Object.defineProperty(Test.prototype,"handleChange",{writable:true,configurable:true,value:function() {"use strict";
+    localStorage.setItem('name', event.target.value);
+    this.setState({name: event.target.value});
   }});
+
 
 
 Test.propTypes = {
   name: React.PropTypes.string
 };
 Test.defaultProps = {
-  name: 'Brad'
+  name: localStorage.getItem('name') || 'insert name'
 };
 
 
